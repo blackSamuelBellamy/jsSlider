@@ -237,8 +237,14 @@ input[type="number"] {
 
     input[type="number"] {
         width: calc(var(--size2) * .15);
-        height: calc(var(--size2) * .05);
-        font-size: 3vw;
+        height: calc(var(--size2) * .06);
+        font-size: 4vw;
+    }
+
+    .theMartian button, .Inter button, .Grav button, .moreM::before, .moreI::before, .moreG::before {
+
+        height: calc(var(--size2) * .009);
+        width: calc(var(--size2) * .04);
     }
 
     
