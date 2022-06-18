@@ -12,7 +12,8 @@
     justify-content: center;
     align-items: center;
     background: url(https://i.ibb.co/Zfhjbqf/1268183.jpg);
-    min-width: 100%;
+    background-attachment: fixed;
+    min-width: 100vw;
     min-height: 100vh;    
 }
 
@@ -92,7 +93,7 @@
 
 
 
-.box {
+.boxMartian, .boxInter, .boxGrav {
     
     position: absolute;
     top: 50%;
@@ -107,20 +108,22 @@
     border-radius: 20px;
     box-shadow: 2px 2px  5px #FFF,
                 2px 2px 30px #FFF inset,
-                8px 8px 20px #FFF;
+                8px 8px 20px rgb(253, 245, 245);
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: .5s;
     gap: 4%;
+    
     
 
 }
 
 .p {
     text-align: center;
-    font-size: calc(var(--size2) * .019);
+    font-size: calc(var(--size2) * .015);
     letter-spacing: 3px;
     color: #FFF;
     text-shadow: 2px 2px  5px #ccc, 1px 1px 4px #000;
@@ -128,38 +131,59 @@
     text-transform: uppercase;
 }
 
-.theCount {
+.theMartian, .Inter, .Grav {
+
 
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 6%;
     width: calc(var(--size2) * .2);
     height: calc(var(--size2) * .05);
     cursor: pointer;
+    transition: .3s;
 }
 
-.theCount span{
+
+.theMartian button, .Inter button, .Grav button {
+
     display: block;
+    position: relative;
     background: #FFF;
-    height: 5px;
-    width: 20px;
+    height: calc(var(--size2) * .005);
+    width: calc(var(--size2) * .02);
+    border: none;
+    outline: none;
+    cursor: pointer;
 
 }
 
 
-.theCount .more::before {
+.moreM::before, .moreI::before, .moreG::before {
     
     content: '';
     position: absolute;
-    height: 5px;
-    width: 20px;
+    top: 0;
+    left: 0;
+    height: calc(var(--size2) * .005);
+    width: calc(var(--size2) * .02);
     background: #FFF;
     transform: rotate(90deg);
     
+    
 }
 
-.theCount span:hover {
+.theMartian button:hover, .Inter button:hover, .Grav button:hover {
+
+    box-shadow: 0 0 5px #FFF,
+                0 0 25px #FFF,
+                0 0 50px #FFF,
+                0 0 100px #FFF,
+                0 0 200px #FFF;
+}
+
+.theMartian button:hover::before, .Inter button:hover::before, .Grav button:hover::before {
 
     box-shadow: 0 0 5px #FFF,
                 0 0 25px #FFF,
@@ -169,7 +193,8 @@
 }
 
 
-.currentNumber {
+
+input[type="number"] {
     background: white;
     width: calc(var(--size2) * .1);
     height: calc(var(--size2) * .04);
@@ -177,8 +202,31 @@
     border: none;
     border-radius: 25px;
     outline: none;
-    text-align: center;
     font-weight: 900;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.3em;
+    font-size: calc(var(--size2) * .015);
+    text-align: center;
+    padding-left: 5%;
+}
+
+.alertaM, .alertaI, .alertaG {
+    
+    position: absolute;
+    top: 70%;
+    text-align: center;
+    font-size: calc(var(--size2) * .015);
+    letter-spacing: 3px;
+    color: #FFF;
+    text-shadow: 2px 2px  5px #ccc, 1px 1px 4px #000;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@media (max-width:600px) {
+
+   .current, .boxMartian, .boxInter, .boxGrav {
+    width: calc(var(--size2) * .6);
+    height: calc(var(--size2) * .8);
+   }
+    
 }
