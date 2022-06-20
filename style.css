@@ -14,7 +14,10 @@
     background: url(https://i.ibb.co/Zfhjbqf/1268183.jpg);
     background-attachment: fixed;
     min-width: 100vw;
-    min-height: 100vh;    
+    min-height: 100vh; 
+    position: fixed;
+    top: 0;
+    bottom: 0;   
 }
 
 .picsContainer {
