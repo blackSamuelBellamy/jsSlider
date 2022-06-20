@@ -29,6 +29,13 @@ const moreG = document.querySelector('.moreG');
 let contador = 2;
 
 
+setTimeout(()=>{
+    next.style.display = 'block';
+    previous.style.display = 'block';
+    document.querySelector('.pics').style.transformStyle = 'flat';
+    document.querySelector('.pics').style.perspective = 'none';
+}, 20000)
+
 const slider = () => {
     if (contador === 2) {
 
